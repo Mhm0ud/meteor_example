@@ -1,0 +1,7 @@
+{
+    "galaxy.meteor.com": {
+       "env": {
+         "MONGO_URL": "__MONGO_URL__"
+       }
+     }
+  }
