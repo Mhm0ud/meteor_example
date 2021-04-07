@@ -31,4 +31,4 @@ jobs:
         with:
           meteor-release: '1.8.1'
       - name: Meteor Deploy
-        run: METEOR_SESSION_FILE=$HOME/token.json meteor deploy meteor-example-mhm0ud1.meteorapp.com --settings $HOME/settings.json
+        run: METEOR_SESSION_FILE=$HOME/token.json meteor deploy meteor-example-mhm0ud1.meteorapp.com --free --settings $HOME/settings.json
