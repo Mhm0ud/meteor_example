@@ -16,12 +16,8 @@ jobs:
         env:
           PASS: ${{ secrets.PASS }}
       - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@master
+        run: perl -pi -e 's/getString\(R\__MONGO_URL__\)/"$ENV{TOKEN}"/' settings.json
         env:
-          MONGO_URL: ${{ secrets.PASS  }}
-        with:
-          find: "__MONGO_URL__"
-          replace: "$ENV{MONGO_URL}"
-          include: "settings.json"
+          TOKEN: ${{ secrets.PASS }}
       - name: Test printing your secret (Remove this step in production)
         run: cat ./settings.json
