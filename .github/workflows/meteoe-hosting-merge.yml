@@ -16,8 +16,8 @@ jobs:
         env:
           PASS: ${{ secrets.PASS }}
       - name: Find and Replace
-        run: perl -pi -e 's/getString\(R\__MONGO_URL__\)/"$ENV{TOKEN}"/' settings.json
         env:
           TOKEN: ${{ secrets.PASS }}
+        run: sed -i -e 's/__MONGO_URL__/$TOKEN/g' settings.json
       - name: Test printing your secret (Remove this step in production)
         run: cat ./settings.json
