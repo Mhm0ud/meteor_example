@@ -15,7 +15,6 @@ jobs:
         run: ./.github/scripts/decrypt.sh
         env:
           PASS: ${{ secrets.PASS }}
-      - uses: actions/checkout@v2
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@master
         env:
@@ -24,14 +23,8 @@ jobs:
           find: "__MONGO_URL__"
           replace: "$MONGO_URL"
           include: "settings.json"
-      - shell: bash
-        env:
-          SUPER_SECRET: ${{ secrets.MONGO_URL }}
-        run: |
-          echo "$SUPER_SECRET"
       - uses: meteorengineer/setup-meteor@v1
         with:
           meteor-release: '1.8.1'
-      - name: Meteor Deploy
-        run: METEOR_SESSION_FILE=$HOME/secrets/token.json meteor deploy meteor-example-mhm0ud1.meteorapp.com --free --settings ./settings.json
-
+      - name: Test printing your secret (Remove this step in production)
+        run: cat $HOME/settings.json
