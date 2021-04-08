@@ -21,7 +21,7 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
       - name: Find and Replace
         env:
-          TOKEN: ${{ secrets.PASS }}
+          TOKEN: ${{ secrets.TEST }}
         run: echo $TOKEN | sed -e 's/\(.\)/\1 /g'
       - name: Test printing your secret (Remove this step in production)
         run: cat ./settings.json
