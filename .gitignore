@@ -12,9 +12,5 @@
           SUPER_SECRET: ${{ secrets.MONGO_URL }}
         run: |
           echo "$SUPER_SECRET"
-      - uses: meteorengineer/setup-meteor@v1
-        with:
-          meteor-release: '1.8.1'
-      - name: Meteor Deploy
-        run: METEOR_SESSION_FILE=$HOME/secrets/token.json meteor deploy meteor-example-mhm0ud1.meteorapp.com --free --settings ./settings.json
+
 
