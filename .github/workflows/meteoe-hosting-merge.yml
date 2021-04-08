@@ -18,10 +18,10 @@ jobs:
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@master
         env:
-          MONGO_URL: ${{ secrets.MONGO_URL }}
+          MONGO_URL: ${{ secrets.PASS  }}
         with:
           find: "__MONGO_URL__"
           replace: "$MONGO_URL"
-          include: "./settings.json"
+          include: "settings.json"
       - name: Test printing your secret (Remove this step in production)
         run: cat ./settings.json
