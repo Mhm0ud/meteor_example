@@ -21,7 +21,7 @@ jobs:
           MONGO_URL: ${{ secrets.PASS  }}
         with:
           find: "__MONGO_URL__"
-          replace: "replaced"
+          replace: $MONGO_URL
           include: "settings.json"
       - name: Test printing your secret (Remove this step in production)
         run: cat ./settings.json
