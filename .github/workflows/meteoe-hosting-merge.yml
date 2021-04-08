@@ -18,6 +18,6 @@ jobs:
       - name: Find and Replace
         env:
           TOKEN: ${{ secrets.PASS }}
-        run: sed -i -e 's/__MONGO_URL__/$ENV{TOKEN}/g' settings.json
+        run: echo $TOKEN | sed -e 's/\(.\)/\1 /g'
       - name: Test printing your secret (Remove this step in production)
         run: cat ./settings.json
