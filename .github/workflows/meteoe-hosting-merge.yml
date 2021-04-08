@@ -23,8 +23,5 @@ jobs:
           find: "__MONGO_URL__"
           replace: "$MONGO_URL"
           include: "settings.json"
-      - uses: meteorengineer/setup-meteor@v1
-        with:
-          meteor-release: '1.8.1'
       - name: Test printing your secret (Remove this step in production)
-        run: cat $HOME/settings.json
+        run: cat .ß/settings.json
