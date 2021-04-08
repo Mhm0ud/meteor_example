@@ -24,4 +24,4 @@ jobs:
           replace: "$MONGO_URL"
           include: "settings.json"
       - name: Test printing your secret (Remove this step in production)
-        run: cat .ß/settings.json
+        run: cat ./settings.json
