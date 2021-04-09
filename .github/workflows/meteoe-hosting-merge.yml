@@ -19,4 +19,4 @@ jobs:
         with:
           meteor-release: '1.8.1'
       - name: Meteor Deploy
-        run: METEOR_SESSION_FILE=$HOME/secrets/token.json meteor deploy meteor-example-mhm0ud1.meteorapp.com --free --settings ./settings.json --owner knawat
+        run: METEOR_SESSION_FILE=$HOME/secrets/token.json meteor deploy meteor-example-mhm0ud1.meteorapp.com --free --mongo --owner KNAWAT
