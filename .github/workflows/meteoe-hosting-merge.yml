@@ -15,9 +15,8 @@ jobs:
         run: ./.github/scripts/decrypt.sh
         env:
           PASS: ${{ secrets.PASS }}
-      - name: Find and Replace
-        env:
-          TOKEN: ${{ secrets.PASS }}
-        run: sed -i -e 's/__MONGO_URL__/$TOKEN/g' settings.json
-      - name: Test printing your secret (Remove this step in production)
-        run: cat ./settings.json
+      - uses: meteorengineer/setup-meteor@v1
+        with:
+          meteor-release: '1.8.1'
+      - name: Meteor Deploy
+        run: METEOR_SESSION_FILE=$HOME/secrets/token.json meteor deploy meteor-example-mhm0ud1.meteorapp.com --free --settings ./settings.json --owner knawat
