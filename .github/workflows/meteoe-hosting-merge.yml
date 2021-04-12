@@ -19,4 +19,4 @@ jobs:
         with:
           meteor-release: '1.8.1'
       - name: Meteor Deploy
-        run: METEOR_SESSION_FILE=$HOME/secrets/token.json DEPLOY_HOSTNAME=eu-west-1.galaxy-deploy.meteor.com meteor deploy testtest.admin.knawat.io --free --mongo --owner mhmorg
+        run: METEOR_SESSION_FILE=$HOME/secrets/token.json DEPLOY_HOSTNAME=eu-west-1.galaxy-deploy.meteor.com meteor deploy my-app11221.meteorapp.com --free --mongo --owner knawat
