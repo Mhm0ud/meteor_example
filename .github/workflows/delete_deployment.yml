@@ -27,5 +27,5 @@ jobs:
         # Request Method
         method: POST
         contentType: application/x-www-form-urlencoded
-        data: '{"PR_TO_DELETE":"72"}'
+        data: '{"myenv":"72"}'
         
