@@ -26,5 +26,5 @@ jobs:
         url: https://app.buddy.works/knawat/mpadmin/pipelines/pipeline/320876/trigger-webhook?token=57c23516566227dd5b0cb629692fe93f0ffadf964c032f739917a9484744a84bd19c2b277ce4cccb90b3a0302df19878
         # Request Method
         method: POST
-        data: PR_TO_DELETE=72
+        data: '{PR_TO_DELETE:72}'
         
