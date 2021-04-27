@@ -20,5 +20,5 @@ jobs:
           PR_NUMBER: ${{ github.event.number }}
           SP_DEV_URL: ${{ secrets.SP_DEV_URL }}
         run: |
-         METEOR_SESSION_FILE=$HOME/secrets/token.json DEPLOY_HOSTNAME=eu-west-1.galaxy-deploy.meteor.com meteor deploy pr-$PR_NUMBER.$SP_DEV_URL --owner knawat --settings deploy/settings.json
+         METEOR_SESSION_FILE=$HOME/secrets/token.json DEPLOY_HOSTNAME=eu-west-1.galaxy-deploy.meteor.com meteor deploy pr-$PR_NUMBER.$SP_DEV_URL --owner knawat
 
