@@ -15,7 +15,7 @@ jobs:
       - name: Find and Replace
         env:
           MONGO_URL: ${{ secrets.MONGO_URL }}
-        run: sed -i -e 's/__MONGO_URL__/${{ secrets.MONGO_URL }}/g' deploy/settings.json
+        run: sed -i 's/__MONGO_URL__/${{ secrets.MONGO_URL }}/g' deploy/settings.json
       - uses: meteorengineer/setup-meteor@v1
         with:
           meteor-release: '1.8.1'
